@@ -1,45 +1,29 @@
 
-import logo from './logo.svg';
 import './App.css';
-// import Greet from './components/Greet';
-// import Welcome from './components/Welcome';
-// import Hello from './components/Hello';
-// import Message from './components/Message';
-// import Counter from './components/Counter';
-// import FunctionClick from './components/FunctionClick';
-// import Classclick from './components/Classclick';
-// import Eventbind from './components/Eventbind';
-// import Prent from './components/Prent';
-// import Nmaelist from './components/Nmaelist';
-// import Stylesheet from './components/Stylesheet';
-// import Inline from './components/Inline';
-// // import Form from './components/Form';
-// import Post from './httpcompo/Post';
-// import New from './Func/New';
-// import Onchange from './Func/Onchange1';
-// // import Form from './components/Form';
-// import Form from './Func/Form';
-import Todo from './Func/Todo';
+import MovieDetails from './Newproject/MovieDetails';
+import Home from './Newproject/Home';
+import Navbar from './Newproject/Navbar';
+import Moviesp from './Newproject/Moviesp';
+import Favourites from './Newproject/Favourites';
+import Notfound from './Newproject/Notfound';
+import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 
 function App() {
+  
   return (
     <div className="App">
-      <Todo></Todo>
-      {/* <Form></Form> */}
-      {/* <Onchange></Onchange> */}
-    {/* <New></New> */}
-      {/* <Post></Post> */}
-      {/* <Form> </Form> */}
-      {/* <Inline></Inline> */}
-      {/* <Stylesheet  primary={true}></Stylesheet> */}
-     {/* <FunctionClick></FunctionClick> */}
-     {/* <Classclick></Classclick> */}
-     {/* <Eventbind></Eventbind> */}
-     {/* <Prent></Prent> */}
-     {/* <Nmaelist></Nmaelist> */}
+      <BrowserRouter>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/movies" element={<Moviesp/>}></Route>
+        <Route path="/movie/:id" element={<MovieDetails/>}></Route>
+        <Route path="/favourites" element={<Favourites/>}></Route>
+        <Route path="*" element={<Notfound/>}></Route>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
 export default App;

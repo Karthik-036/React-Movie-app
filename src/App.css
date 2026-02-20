@@ -12,6 +12,17 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
 
 .App-header {
   background-color: #282c34;
