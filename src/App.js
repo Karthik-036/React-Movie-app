@@ -6,14 +6,13 @@ import Navbar from './Newproject/Navbar';
 import Moviesp from './Newproject/Moviesp';
 import Favourites from './Newproject/Favourites';
 import Notfound from './Newproject/Notfound';
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import {Routes,Route} from "react-router-dom"
 
 
 function App() {
   
   return (
     <div className="App">
-      <BrowserRouter>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
@@ -22,7 +21,6 @@ function App() {
         <Route path="/favourites" element={<Favourites/>}></Route>
         <Route path="*" element={<Notfound/>}></Route>
       </Routes>
-      </BrowserRouter>
     </div>
   );
 }
